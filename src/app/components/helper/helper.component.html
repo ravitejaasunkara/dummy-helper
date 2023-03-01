@@ -1,0 +1,23 @@
+<div class="main">
+    <h1>Product Helper</h1>
+    <hr/>
+    <h3>FINDER</h3>
+    <h6>Search for Products</h6>
+    <div class="input-box">
+        SKU/ISBN/TITLE : <input type="text" [(ngModel)]="enteredText" 
+        (ngModelChange)="whenInputEntered($event)">
+    </div>
+    <button style="margin-top: 12px;">Search</button>
+    <div *ngIf="productDataAvailable" class="search-result" style="padding-top: 24px;">
+        <div *ngFor="let item of productData" class="search-box">
+            <li>Action:<a href="javascript:void(0);">Select</a></li>
+            <li>versionType:<p>{{item.versionType}}</p></li>
+            <li>SKU:<p>{{item.SKU}}</p></li>
+            <li>ISBN:<p>{{item.ISBN}}</p></li>
+            <li>Title:<p>{{item.title}}</p></li>
+        </div>
+    </div>
+</div>
+<section class="product-page">
+    
+</section>
